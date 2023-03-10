@@ -8,7 +8,7 @@ export class ChartService {
 
   getUsers(): Observable<any> {
     return this.http.get(
-      'https://query2.finance.yahoo.com/v8/finance/chart/PETR4.SA?range=1mo&interval=1d'
+      'https://query2.finance.yahoo.com/v8/finance/chart/PETR4.SA?range=3mo&interval=1d'
     );
   }
 }

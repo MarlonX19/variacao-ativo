@@ -1,6 +1,7 @@
 <div class="container">
   <div class="ui card">
-    <h1>Stock Market - PETR4.SA</h1>
+    <title>{{ title }}</title>
+    <h1>Pregões - PETR4.SA</h1>
     <h2 *ngIf="errorMessage">{{ errorMessage }}</h2>
     <div class="graph-container" *ngIf="lineChartData.labels.length">
       <canvas

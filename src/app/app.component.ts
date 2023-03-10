@@ -10,6 +10,8 @@ import { SearchResponsePayload } from './models/response';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  title: string = 'teamapp';
+
   public lineChartData: ChartConfiguration<'line'>['data'] | any = {
     labels: [],
     datasets: [
@@ -50,16 +52,19 @@ export class AppComponent {
       } = data;
 
       this.lineChartData.labels?.push(
-        ...this.calculateDatesForChart(values?.timestamp)
+        ...this.calculateDatesForChart(values?.timestamp?.slice?.(-30))
       );
       this.lineChartData.datasets[0].data.push(
-        ...values?.indicators?.quote[0]?.open
+        ...values?.indicators?.quote[0]?.open?.slice?.(-30)
       );
 
-      if (values?.timestamp && values?.indicators?.quote[0]?.open) {
+      if (
+        values?.timestamp?.slice?.(-30) &&
+        values?.indicators?.quote[0]?.open?.slice?.(-30)
+      ) {
         this.calculateValuesForTable(
-          values?.timestamp,
-          values?.indicators?.quote[0]?.open
+          values?.timestamp?.slice?.(-30),
+          values?.indicators?.quote[0]?.open?.slice?.(-30)
         );
       } else {
         this.errorMessage = 'Oops, something went wrong!';
@@ -75,6 +80,9 @@ export class AppComponent {
 
   calculateValuesForTable(timestamps: number[], openValues: number[]) {
     const arrayWithFormattedValues: TableValue = [];
+
+    console.log('===bbb', timestamps);
+    console.log('===bbbcccc', openValues);
 
     timestamps.forEach((value, index) => {
       let date = this.calculateDateFromTimestamp(value);
