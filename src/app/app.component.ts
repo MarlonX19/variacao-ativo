@@ -10,8 +10,6 @@ import { SearchResponsePayload } from './models/response';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: string = 'teamapp';
-
   public lineChartData: ChartConfiguration<'line'>['data'] | any = {
     labels: [],
     datasets: [
