@@ -1,0 +1,45 @@
+<div *ngIf="finalTableValues.length > 0">
+  <table mat-table [dataSource]="finalTableValues" class="mat-elevation-z8">
+    <ng-container matColumnDef="dayNumber">
+      <th mat-header-cell *matHeaderCellDef>Dia</th>
+      <td mat-cell *matCellDef="let element">#{{ element.dayNumber }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Data</th>
+      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="currencyValue">
+      <th mat-header-cell *matHeaderCellDef>Valor</th>
+      <td mat-cell *matCellDef="let element">R$ {{ element.currencyValue }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="percentVariationByDay">
+      <th mat-header-cell *matHeaderCellDef>Variação em relaçào a D-1 (%)</th>
+      <td mat-cell *matCellDef="let element">
+        {{
+          element.percentVariationByDay
+            ? element.percentVariationByDay + "%"
+            : "-"
+        }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="percentVariationFromDayOne">
+      <th mat-header-cell *matHeaderCellDef>
+        Variação em relação a primeira data (%)
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{
+          element.percentVariationFromDayOne
+            ? element.percentVariationFromDayOne + "%"
+            : "-"
+        }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
