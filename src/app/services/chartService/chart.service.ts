@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ChartService {
+  baseUrl = 'https://variacao-ativo-virid.vercel.app/api';
+
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any> {
-    return this.http.get(
-      'https://query2.finance.yahoo.com/v8/finance/chart/PETR4.SA?range=3mo&interval=1d'
-    );
+    return this.http.get(this.baseUrl);
   }
 }
