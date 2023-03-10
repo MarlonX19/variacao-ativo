@@ -4,6 +4,13 @@
   margin: 0 auto;
 }
 
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .graph-container {
   width: 100%;
   display: flex;
