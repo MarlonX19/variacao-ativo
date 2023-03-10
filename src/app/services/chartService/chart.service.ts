@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ChartService {
-  baseUrl = 'https://variacao-ativo-virid.vercel.app/api';
+  baseUrl = 'http://localhost:4200/api';
 
   constructor(private http: HttpClient) {}
 

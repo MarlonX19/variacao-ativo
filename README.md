@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 
+# Tools
+
+In order to run and/or build the app it is necessary to have [NodeJS](https://nodejs.org/en/) and [Angular](https://github.com/angular/angular-cli) installed on your machine.
+
 # Host
 
 This project can also be found at https://variacao-ativo-virid.vercel.app/
